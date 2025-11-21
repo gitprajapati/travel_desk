@@ -1,18 +1,26 @@
 """
 Data Seeding Script for Corporate Travel Management System
 Populates 180 days of flight and hotel inventory
-Uses PostgreSQL NeonDB
+Uses PostgreSQL (Neon DB or Supabase)
 """
 
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import *
 from datetime import datetime, timedelta, time
 import random
 import json
+from dotenv import load_dotenv
 
-# PostgreSQL NeonDB Connection
-DATABASE_URL = ""
+# Load environment variables from .env file
+load_dotenv()
+
+# PostgreSQL Connection from environment
+DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL environment variable not set!")
+
 # Configuration
 DAYS_TO_GENERATE = 180
 START_DATE = datetime.now().date()
