@@ -13,7 +13,6 @@ import json
 
 # PostgreSQL NeonDB Connection
 DATABASE_URL = ""
-
 # Configuration
 DAYS_TO_GENERATE = 180
 START_DATE = datetime.now().date()
