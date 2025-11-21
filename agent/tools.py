@@ -13,9 +13,13 @@ from datetime import datetime, date, timedelta
 from typing import Optional, List, Dict, Any
 from langchain_core.tools import tool
 import json
+from dotenv import load_dotenv
 
+# Ensure values from .env land in os.environ for downstream libraries
+load_dotenv()
+import os
 # PostgreSQL NeonDB Connection
-DATABASE_URL = "postgresql://neondb_owner:npg_lje8uFsxpH7Y@ep-patient-heart-ahhgeuvh-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 
 # ============================================================================

@@ -17,7 +17,7 @@ class RAGSettings(BaseModel):
     """Configuration for RAG system including embeddings, Milvus, and LLM."""
 
     # Google Gemini Configuration
-    GOOGLE_API_KEY: str = Field(default_factory=lambda: os.getenv("GOOGLE_API_KEY", ""))
+    GOOGLE_API_KEY: str = Field(default_factory=lambda: os.getenv("GOOGLE_API_KEY"))
     EMBED_MODEL: str = Field(default="gemini-embedding-001")
     EMBED_DIM: int = Field(default=3072)
     CHAT_MODEL: str = Field(default="gemini-2.5-flash")
@@ -25,14 +25,13 @@ class RAGSettings(BaseModel):
     # Milvus Cloud (Zilliz) Configuration
     MILVUS_URI: str = Field(
         default_factory=lambda: os.getenv(
-            "MILVUS_URI",
-            "https://in03-4f0e962232301fd.serverless.aws-eu-central-1.cloud.zilliz.com"
+            "MILVUS_URI"
+            
         )
     )
     MILVUS_TOKEN: str = Field(
         default_factory=lambda: os.getenv(
-            "MILVUS_TOKEN",
-            "2a0a5af1c66d886e915440acd4b88c269fe717c2353b55b567bb2479c6ccd60653dea912e5c121922041b73ad1f8a90af1510390"
+            "MILVUS_TOKEN"
         )
     )
     COLLECTION_NAME: str = Field(default="travel_indent_gemini_3072")
