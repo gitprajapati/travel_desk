@@ -12,7 +12,7 @@ import random
 import json
 
 # PostgreSQL NeonDB Connection
-DATABASE_URL = "postgresql://neondb_owner:npg_lje8uFsxpH7Y@ep-patient-heart-ahhgeuvh-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require"
+DATABASE_URL = ""
 
 # Configuration
 DAYS_TO_GENERATE = 180
