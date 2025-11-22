@@ -1,3 +1,7 @@
+# File: /seed.py
+# Location: Root directory
+# Description: Data seeding script for corporate travel management system
+
 """
 Data Seeding Script for Corporate Travel Management System
 Populates 180 days of flight and hotel inventory
